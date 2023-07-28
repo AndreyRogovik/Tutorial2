@@ -20,7 +20,6 @@ def get_birthdays_per_week(users):
     # Знаходимо поточний день тижня (0 - понеділок, 1 - вівторок, ..., 6 - неділя)
     current_day = today.weekday()
 
-    
     week_dict = {
         "Monday": [],
         "Tuesday": [],
@@ -30,7 +29,6 @@ def get_birthdays_per_week(users):
         "Saturday": [],
         "Sunday": [],   
     }
-    
     
     for user in users:
         # Визначаю день народження в цьому році
@@ -46,7 +44,6 @@ def get_birthdays_per_week(users):
                 # Додаємо ім'я користувача до списку понеділка
                 week_dict['Monday'].append(user['name'])
         
-    print("week_dict", week_dict)
     # Створюємо список днів тижня у відповідному порядку, починаючи з поточного дня
     days_list = list(week_dict.keys())
     week_days_ordered = days_list[current_day:] + days_list[:current_day]
